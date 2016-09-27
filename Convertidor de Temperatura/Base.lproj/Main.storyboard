@@ -18,13 +18,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Rl3-KH-zyA">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="-273.14999999999998" maxValue="1726.8499999999999" translatesAutoresizingMaskIntoConstraints="NO" id="Rl3-KH-zyA">
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" id="fiS-HY-fTU"/>
                                 </constraints>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="h5R-si-avh"/>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="d13-3R-XRY"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="-459.67000000000002" maxValue="3140.3299999999999" translatesAutoresizingMaskIntoConstraints="NO" id="h5R-si-avh"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="2000" translatesAutoresizingMaskIntoConstraints="NO" id="d13-3R-XRY"/>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ºC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fND-Ck-exg">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="27" id="5Mj-Bb-AAQ"/>
@@ -69,14 +69,24 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hIf-W1-lIl">
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" title="Convertir desde ºF"/>
+                                <connections>
+                                    <action selector="convertFromCelcius:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W6K-cY-ap1"/>
+                                    <action selector="convertFromFarenheit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cRN-D8-vME"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kXQ-J4-FtP">
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" title="Convertir desde ºC"/>
+                                <connections>
+                                    <action selector="convertFromCelcius:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NgQ-Qh-Uoy"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C3H-yr-pjT">
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" title="Convertir desde ºK"/>
+                                <connections>
+                                    <action selector="convertFromKelvin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7cC-8a-rcj"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -118,6 +128,11 @@
                             <constraint firstItem="Rl3-KH-zyA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wWg-jk-AFw"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="txtTempC" destination="RR4-So-FcL" id="LTQ-Xn-F6K"/>
+                        <outlet property="txtTempF" destination="iRe-0y-dPc" id="RDq-Ts-D8M"/>
+                        <outlet property="txtTempK" destination="d7F-FZ-aKa" id="SGp-ay-dwc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
