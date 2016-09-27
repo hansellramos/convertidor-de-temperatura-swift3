@@ -16,6 +16,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var txtTempF: UITextField!
     @IBOutlet weak var txtTempK: UITextField!
     
+    @IBOutlet weak var sldTempC: UISlider!
+    @IBOutlet weak var sldTempF: UISlider!
+    @IBOutlet weak var sldTempK: UISlider!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         temp = Temperature()
@@ -44,11 +48,26 @@ class ViewController: UIViewController {
         self.temp?.fromKelvin(kelvin: Double(txtTempK.text!)!)
         self.showValues()
     }
+    @IBAction func sldTempChange(_ sender: UISlider) {
+        self.temp!.temperature = Double(sender.value)
+        self.showValues()
+    }
+    @IBAction func sldTempFChange(_ sender: UISlider) {
+        self.temp!.fromFarenheit(farenheit: Double(sender.value))
+        self.showValues()
+    }
+    @IBAction func sldTempKChange(_ sender: UISlider) {
+        self.temp!.fromKelvin(kelvin: Double(sender.value))
+        self.showValues()
+    }
     
     func showValues() -> Void{
-        txtTempC.text = "\(self.temp!.temperature)"
-        txtTempF.text = "\(self.temp!.toFarenheit())"
-        txtTempK.text = "\(self.temp!.toKelvin())"
+        txtTempC.text = "\(round(self.temp!.temperature))"
+        sldTempC.value = Float(self.temp!.temperature)
+        txtTempF.text = "\(round(self.temp!.toFarenheit()))"
+        sldTempF.value = Float(self.temp!.toFarenheit())
+        txtTempK.text = "\(round(self.temp!.toKelvin()))"
+        sldTempK.value = Float(self.temp!.toKelvin())
     }
 
 }

@@ -22,9 +22,20 @@
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" id="fiS-HY-fTU"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="sldTempChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="1j1-hy-jfi"/>
+                                </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="-459.67000000000002" maxValue="3140.3299999999999" translatesAutoresizingMaskIntoConstraints="NO" id="h5R-si-avh"/>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="2000" translatesAutoresizingMaskIntoConstraints="NO" id="d13-3R-XRY"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="-459.67000000000002" maxValue="3140.3299999999999" translatesAutoresizingMaskIntoConstraints="NO" id="h5R-si-avh">
+                                <connections>
+                                    <action selector="sldTempFChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="wJX-rR-gPG"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="2000" translatesAutoresizingMaskIntoConstraints="NO" id="d13-3R-XRY">
+                                <connections>
+                                    <action selector="sldTempKChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="lOt-Eh-uuA"/>
+                                </connections>
+                            </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ºC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fND-Ck-exg">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="27" id="5Mj-Bb-AAQ"/>
@@ -129,6 +140,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="sldTempC" destination="Rl3-KH-zyA" id="9QY-IG-Cht"/>
+                        <outlet property="sldTempF" destination="h5R-si-avh" id="x7B-PJ-fS5"/>
+                        <outlet property="sldTempK" destination="d13-3R-XRY" id="kI7-Am-yFJ"/>
                         <outlet property="txtTempC" destination="RR4-So-FcL" id="LTQ-Xn-F6K"/>
                         <outlet property="txtTempF" destination="iRe-0y-dPc" id="RDq-Ts-D8M"/>
                         <outlet property="txtTempK" destination="d7F-FZ-aKa" id="SGp-ay-dwc"/>
